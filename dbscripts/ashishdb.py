@@ -2,26 +2,28 @@
 import MySQLdb
 
 # Open database connection
-db = MySQLdb.connect("zekeserver.cra1n4auudcc.ap-southeast-1.rds.amazonaws.com","user","zeketraining","zekedb")
+db = MySQLdb.connect("zekeinstance.cra1n4auudcc.ap-southeast-1.rds.amazonaws.com","test","epsilon123","zekelabs")
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
 
 # Create table as per requirement
-#sql = """CREATE TABLE EMPLOYEE1 (
-#         FIRST_NAME  CHAR(20) NOT NULL,
-#         LAST_NAME  CHAR(20),
-#         AGE INT,  
-#         SEX CHAR(1),
-#         INCOME FLOAT )"""
-#cursor.execute(sql)
+'''
+sql = """CREATE TABLE EMPLOYEE_PRAMOD (
+         FIRST_NAME  CHAR(20) NOT NULL,
+         LAST_NAME  CHAR(20),
+         AGE INT,  
+         SEX CHAR(1),
+         INCOME FLOAT )"""
+cursor.execute(sql)
+'''
 #
 # execute SQL query using execute() method.
-sql = """INSERT INTO EMPLOYEE1(FIRST_NAME,
+sql = """INSERT INTO EMPLOYEE_PRAMOD(FIRST_NAME,
          LAST_NAME, AGE, SEX, INCOME)
-         VALUES ('Prithvi', 'M', 25, 'M', 6000)"""
+         VALUES ('Pramod Gaikwad', 'M', 25, 'M', 6000)"""
 
-#sql = """ DELETE FROM EMPLOYEE1 WHERE FIRST_NAME = "Prithvi" """
+#sql = """ DELETE FROM EMPLOYEE_PRAMOD WHERE FIRST_NAME = "Prithvi" """
 cursor.execute(sql)
 db.commit()
 
